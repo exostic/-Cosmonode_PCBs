@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>/home/ed/Kicad/Cosmonode_full/BME280/BME280.sch</source>
-    <date>lun. 11 déc. 2017 16:09:25 CET</date>
+    <source>/home/ed/Kicad/Cosmonode_full/Cosmonode_ext01/Cosmonode_ext01.sch</source>
+    <date>jeu. 28 déc. 2017 19:43:35 CET</date>
     <tool>Eeschema 4.0.7-e2-6376~60~ubuntu17.10.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -10,7 +10,7 @@
         <company/>
         <rev/>
         <date/>
-        <source>BME280.sch</source>
+        <source>Cosmonode_ext01.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
         <comment number="3" value=""/>
@@ -41,8 +41,66 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5A2EA676</tstamp>
     </comp>
+    <comp ref="J3">
+      <value>GS3</value>
+      <footprint>Connectors:GS3</footprint>
+      <libsource lib="conn" part="GS3"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A2EAAE8</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A4535B3</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>CONN_01X01</value>
+      <footprint>Wire_Pads:SolderWirePad_single_1-2mmDrill</footprint>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A453B9F</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>CONN_01X01</value>
+      <footprint>Wire_Pads:SolderWirePad_single_1-2mmDrill</footprint>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A453C13</tstamp>
+    </comp>
+    <comp ref="J5">
+      <value>CONN_01X01</value>
+      <footprint>Wire_Pads:SolderWirePad_single_1-2mmDrill</footprint>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A453C53</tstamp>
+    </comp>
+    <comp ref="J6">
+      <value>CONN_01X01</value>
+      <footprint>Wire_Pads:SolderWirePad_single_1-2mmDrill</footprint>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5A453C98</tstamp>
+    </comp>
   </components>
   <libparts>
+    <libpart lib="conn" part="CONN_01X01">
+      <description>Connector, single row, 01x01, pin header</description>
+      <footprints>
+        <fp>Pin_Header_Straight_1X*</fp>
+        <fp>Pin_Header_Angled_1X*</fp>
+        <fp>Socket_Strip_Straight_1X*</fp>
+        <fp>Socket_Strip_Angled_1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">CONN_01X01</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="conn" part="CONN_01X04">
       <description>Connector, single row, 01x04, pin header</description>
       <footprints>
@@ -60,6 +118,36 @@
         <pin num="2" name="P2" type="passive"/>
         <pin num="3" name="P3" type="passive"/>
         <pin num="4" name="P4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="C_Small">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="GS3">
+      <description>3-pin jumper/solder bridge</description>
+      <footprints>
+        <fp>GS*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">GS3</field>
+        <field name="Footprint">Connectors:GS3</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G1" type="passive"/>
+        <pin num="2" name="G2" type="passive"/>
+        <pin num="3" name="G3" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="SI7020-A20-YM0R" part="SI7020-A20-YM0R">
@@ -92,30 +180,52 @@
     <library logical="conn">
       <uri>/home/ed/Kicad/kicad-library/library/conn.lib</uri>
     </library>
+    <library logical="device">
+      <uri>/home/ed/Kicad/kicad-library/library/device.lib</uri>
+    </library>
   </libraries>
   <nets>
-    <net code="1" name="Net-(U1-Pad3)">
+    <net code="1" name="GND">
+      <node ref="J3" pin="2"/>
+      <node ref="U1" pin="2"/>
+      <node ref="J1" pin="3"/>
+      <node ref="C1" pin="2"/>
+    </net>
+    <net code="2" name="Net-(J3-Pad3)">
+      <node ref="J3" pin="3"/>
       <node ref="U1" pin="3"/>
     </net>
-    <net code="2" name="Net-(U1-Pad4)">
+    <net code="3" name="Net-(J3-Pad1)">
+      <node ref="J3" pin="1"/>
       <node ref="U1" pin="4"/>
     </net>
-    <net code="3" name="GND">
-      <node ref="J1" pin="2"/>
-      <node ref="U1" pin="2"/>
+    <net code="4" name="Net-(U1-Pad7)">
       <node ref="U1" pin="7"/>
     </net>
-    <net code="4" name="+3V3">
-      <node ref="U1" pin="5"/>
-      <node ref="J1" pin="1"/>
+    <net code="5" name="Net-(J2-Pad1)">
+      <node ref="J2" pin="1"/>
     </net>
-    <net code="5" name="A5">
+    <net code="6" name="Net-(J4-Pad1)">
+      <node ref="J4" pin="1"/>
+    </net>
+    <net code="7" name="Net-(J5-Pad1)">
+      <node ref="J5" pin="1"/>
+    </net>
+    <net code="8" name="Net-(J6-Pad1)">
+      <node ref="J6" pin="1"/>
+    </net>
+    <net code="9" name="A5">
       <node ref="U1" pin="6"/>
-      <node ref="J1" pin="3"/>
+      <node ref="J1" pin="2"/>
     </net>
-    <net code="6" name="A4">
-      <node ref="U1" pin="1"/>
+    <net code="10" name="+3V3">
+      <node ref="C1" pin="1"/>
+      <node ref="U1" pin="5"/>
       <node ref="J1" pin="4"/>
+    </net>
+    <net code="11" name="A4">
+      <node ref="U1" pin="1"/>
+      <node ref="J1" pin="1"/>
     </net>
   </nets>
 </export>

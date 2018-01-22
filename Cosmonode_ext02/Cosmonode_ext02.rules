@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 946)
+    (start_pass_no 1298)
     (layer_rule F.Cu
       (active on)
       (preferred_direction vertical)
@@ -66,7 +66,7 @@
     "Net-(C1-Pad1)" "Net-(C1-Pad2)" +5V "Net-(C5-Pad2)" +3V3 GND "Net-(J5-Pad2)" "A0_5V"
     "A1_5V" A0 A1 A3 A4 A5 A6 A7
     RX TX D2 D3 D4 +BATT D5 D6
-    D7 D8 D9 RST MOSI MISO SCK
+    D7 D8 D9 RST MOSI MISO SCK "Net-(J12-Pad2)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule

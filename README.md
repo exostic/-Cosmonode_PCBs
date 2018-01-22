@@ -2,8 +2,7 @@
 
 Universal node, plug and play extensions to ease sensors connection.
 
-
-### Features
+## Features
 
 	- Compile and flash with Arduino IDE
 	- MCU = ATMega328P-AU
@@ -16,7 +15,7 @@ Universal node, plug and play extensions to ease sensors connection.
 	- Button for reset / config mode, or anything else!
 	- ATSHA204 to allow hardware unique signature ( no use with RN2483 )
 
-### Projects
+## Projects
 
 Each directory contains Kicad plans, 3D plans, gerber, descriptive .png and .pdf files.
 
@@ -28,10 +27,10 @@ Each directory contains Kicad plans, 3D plans, gerber, descriptive .png and .pdf
 	- ext06 : Analog pH Sensor - BNC probe (WIP)
 	- ext07 : MHZ19, CO2 sensor
 
-### Board pinout
+## Board pinout
 
-	- A0 = /
-	- A1 = /
+	A0 = /
+	A1 = /
 	A2 = ATSHA204 Input
 	A3 = Battery voltage report
 	A4 = SDA
@@ -54,6 +53,6 @@ Each directory contains Kicad plans, 3D plans, gerber, descriptive .png and .pdf
 	D13 = RFM69 SCK
 	*optionnal, solder jumper
 
-### Roadmap
+## Roadmap
 
 --> changelog.md

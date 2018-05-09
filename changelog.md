@@ -1,17 +1,24 @@
 # Roadmap
 
+### v0.9 ( Future )
+
+- 4 layers PCB ( x - VCC - GND - y ) ( price x 5 )
+
+
 ### v0.8 ( WIP )
 
 - optionnal GND D6 - battery report
 - change battery monitoring circuit - Vi -- 470K -- A3 (Vo) -- 470K -- D6 (GND)
 - add IPX connector
-- Switch to ATMega32U4 ? 
+- Switch to ATMega32U4 ?  STM32L072CZ ?
 - move 2 pins JST for easier access when extension mounted
 - use another MFRC522 breakout board ( smaller )
 - reduce global node size 
 - add on/off switch on PCB - correct circuit ( jumper JP1 unuseful in v 0.7 )
 - power manager - SPI connector on extension ( D6 - GND, D5 - 3.3V )
 - revert ext01 pins header on ext02 ( SDA - SCL - GND - 3.3V )
+- fix I2C problem ( related to voltage ? 4.2 V LDO trouble ? USB input ?)
+- correct D4 & D5 circuit ( add 3.3V input ? )
 
 ### v0.7 
 
